@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing the work</title>
+    <link rel="stylesheet" href="/styles/main.css">
+
+</head>
+<body>
+    <h1 class="heading">Let me guess work for you</h1>
+
+    <form action="/" method="post">
+        <label for="type" class="label-type">Select Type:
+        <select name="type" class="select-type">
+            <option value="">Random</option>
+            <option value="social">Social</option>
+            <option value="diy">Diy</option>
+            <option value="music">Music</option>
+        </select>
+    </label>
+
+    <label for="party" class="label-party">Select peoples:
+        <select name="party" class="select-party">
+            <option value="">Random</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </label>
+
+        <button type="submit" class="btn-go">get work</button>
+    </form>
+
+    <% if(locals.data){%>
+        <div class="container-ans">
+            <h2>
+               Activity: <%= data.activity %>
+            </h2>
+
+            <h3>
+            Type: <%= data.type %>
+            </h3>
+
+            <h4>
+           parties: <%= data.participants %>
+            </h4>
+        </div>
+   <% }else{%>
+    <h2><%= error %></h2>
+   <%} %>
+</div>
+
+</body>
+</html>
